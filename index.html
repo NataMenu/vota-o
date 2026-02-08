@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Votação Escolar</title>
+<title>Votação Escolar - 8º Ano</title>
 
 <style>
 body{
@@ -13,31 +13,42 @@ body{
     padding:0;
 }
 .container{
-    max-width:500px;
+    max-width:520px;
     margin:auto;
     background:#fff;
     padding:20px;
     margin-top:30px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
 }
 h1{
     text-align:center;
     color:#1e3a8a;
+}
+.aviso{
+    background:#fff3cd;
+    color:#856404;
+    padding:10px;
+    border-radius:8px;
+    font-size:14px;
+    margin-bottom:15px;
 }
 label{
     font-weight:bold;
     display:block;
     margin-top:15px;
 }
+.opcao{
+    margin:6px 0;
+}
 button{
     width:100%;
-    padding:12px;
-    margin-top:20px;
+    padding:14px;
+    margin-top:25px;
     background:#1e3a8a;
     color:#fff;
     border:none;
-    border-radius:6px;
+    border-radius:8px;
     font-size:16px;
     cursor:pointer;
 }
@@ -49,28 +60,66 @@ button:hover{
 
 <body>
 <div class="container">
-<h1>Votação Escolar</h1>
+
+<h1>Votação do 8º Ano</h1>
+
+<div class="aviso">
+⚠️ Use seu nome real.  
+Nomes zueiros = voto anulado.  
+Só é permitido votar <b>uma vez</b>.
+</div>
 
 <form action="https://formsubmit.co/diegobenevides928@gmail.com" method="POST" onsubmit="return votar()">
 
-<input type="hidden" name="_subject" value="Novo voto recebido">
+<input type="hidden" name="_subject" value="🗳️ Novo voto - 8º Ano">
 <input type="hidden" name="_captcha" value="false">
 
 <label>Nome do aluno</label>
 <input type="text" id="nome" required>
 
-<label>Supremo</label>
-<input type="radio" name="supremo" value="Candidato A"> Candidato A<br>
-<input type="radio" name="supremo" value="Candidato B"> Candidato B
+<label>Presidente</label>
+<div class="opcao">
+<input type="radio" checked disabled> Diego (já definido)
+</div>
+
+<label>Supremo Tribunal</label>
+<div class="opcao"><input type="radio" name="supremo" value="Felipe"> Felipe</div>
+<div class="opcao"><input type="radio" name="supremo" value="Cauã"> Cauã</div>
+<div class="opcao"><input type="radio" name="supremo" value="Gimenez"> Gimenez</div>
+<div class="opcao"><input type="radio" name="supremo" value="Arthur Henrique"> Arthur Henrique</div>
+<div class="opcao"><input type="radio" name="supremo" value="Thais"> Thais</div>
+<div class="opcao"><input type="radio" name="supremo" value="Isadora"> Isadora</div>
+<div class="opcao"><input type="radio" name="supremo" value="Kelsey"> Kelsey</div>
+<div class="opcao"><input type="radio" name="supremo" value="Juan"> Juan</div>
+<div class="opcao"><input type="radio" name="supremo" value="Miguel"> Miguel</div>
+<div class="opcao"><input type="radio" name="supremo" value="Heloisa"> Heloisa</div>
+<div class="opcao"><input type="radio" name="supremo" value="João Lucas"> João Lucas</div>
 
 <label>Senador</label>
-<input type="radio" name="senador" value="Candidato A"> Candidato A<br>
-<input type="radio" name="senador" value="Candidato B"> Candidato B
+<div class="opcao"><input type="radio" name="senador" value="Felipe"> Felipe</div>
+<div class="opcao"><input type="radio" name="senador" value="Cauã"> Cauã</div>
+<div class="opcao"><input type="radio" name="senador" value="Gimenez"> Gimenez</div>
+<div class="opcao"><input type="radio" name="senador" value="Arthur Henrique"> Arthur Henrique</div>
+<div class="opcao"><input type="radio" name="senador" value="Thais"> Thais</div>
+<div class="opcao"><input type="radio" name="senador" value="Isadora"> Isadora</div>
+<div class="opcao"><input type="radio" name="senador" value="Kelsey"> Kelsey</div>
+<div class="opcao"><input type="radio" name="senador" value="Juan"> Juan</div>
+<div class="opcao"><input type="radio" name="senador" value="Miguel"> Miguel</div>
+<div class="opcao"><input type="radio" name="senador" value="Heloisa"> Heloisa</div>
+<div class="opcao"><input type="radio" name="senador" value="João Lucas"> João Lucas</div>
 
-<label>Deputados (até 2)</label>
-<input type="checkbox" name="dep" value="Dep 1"> Dep 1<br>
-<input type="checkbox" name="dep" value="Dep 2"> Dep 2<br>
-<input type="checkbox" name="dep" value="Dep 3"> Dep 3
+<label>Deputados (escolha até 2)</label>
+<div class="opcao"><input type="checkbox" name="dep" value="Felipe"> Felipe</div>
+<div class="opcao"><input type="checkbox" name="dep" value="Cauã"> Cauã</div>
+<div class="opcao"><input type="checkbox" name="dep" value="Gimenez"> Gimenez</div>
+<div class="opcao"><input type="checkbox" name="dep" value="Arthur Henrique"> Arthur Henrique</div>
+<div class="opcao"><input type="checkbox" name="dep" value="Thais"> Thais</div>
+<div class="opcao"><input type="checkbox" name="dep" value="Isadora"> Isadora</div>
+<div class="opcao"><input type="checkbox" name="dep" value="Kelsey"> Kelsey</div>
+<div class="opcao"><input type="checkbox" name="dep" value="Juan"> Juan</div>
+<div class="opcao"><input type="checkbox" name="dep" value="Miguel"> Miguel</div>
+<div class="opcao"><input type="checkbox" name="dep" value="Heloisa"> Heloisa</div>
+<div class="opcao"><input type="checkbox" name="dep" value="João Lucas"> João Lucas</div>
 
 <input type="hidden" name="Nome" id="fNome">
 <input type="hidden" name="Supremo" id="fSupremo">
@@ -83,6 +132,12 @@ button:hover{
 
 <script>
 function votar(){
+
+    if(localStorage.getItem("jaVotou")){
+        alert("❌ Você já votou. Apenas um voto é permitido.");
+        return false;
+    }
+
     const nome = document.getElementById("nome").value.trim();
     const supremo = document.querySelector('input[name="supremo"]:checked')?.value;
     const senador = document.querySelector('input[name="senador"]:checked')?.value;
@@ -98,6 +153,7 @@ function votar(){
     document.getElementById("fSenador").value = senador;
     document.getElementById("fDeputados").value = deps.join(", ");
 
+    localStorage.setItem("jaVotou","true");
     return true;
 }
 </script>
