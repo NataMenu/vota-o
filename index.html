@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votação Escolar</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f4f8;
+    margin:0;
+    padding:0;
+}
+.container{
+    max-width:500px;
+    margin:auto;
+    background:#fff;
+    padding:20px;
+    margin-top:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+h1{
+    text-align:center;
+    color:#1e3a8a;
+}
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:15px;
+}
+button{
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    background:#1e3a8a;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+button:hover{
+    background:#162f6a;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>Votação Escolar</h1>
+
+<form action="https://formsubmit.co/diegobenevides928@gmail.com" method="POST" onsubmit="return votar()">
+
+<input type="hidden" name="_subject" value="Novo voto recebido">
+<input type="hidden" name="_captcha" value="false">
+
+<label>Nome do aluno</label>
+<input type="text" id="nome" required>
+
+<label>Supremo</label>
+<input type="radio" name="supremo" value="Candidato A"> Candidato A<br>
+<input type="radio" name="supremo" value="Candidato B"> Candidato B
+
+<label>Senador</label>
+<input type="radio" name="senador" value="Candidato A"> Candidato A<br>
+<input type="radio" name="senador" value="Candidato B"> Candidato B
+
+<label>Deputados (até 2)</label>
+<input type="checkbox" name="dep" value="Dep 1"> Dep 1<br>
+<input type="checkbox" name="dep" value="Dep 2"> Dep 2<br>
+<input type="checkbox" name="dep" value="Dep 3"> Dep 3
+
+<input type="hidden" name="Nome" id="fNome">
+<input type="hidden" name="Supremo" id="fSupremo">
+<input type="hidden" name="Senador" id="fSenador">
+<input type="hidden" name="Deputados" id="fDeputados">
+
+<button type="submit">Enviar voto</button>
+</form>
+</div>
+
+<script>
+function votar(){
+    const nome = document.getElementById("nome").value.trim();
+    const supremo = document.querySelector('input[name="supremo"]:checked')?.value;
+    const senador = document.querySelector('input[name="senador"]:checked')?.value;
+    const deps = [...document.querySelectorAll('input[name="dep"]:checked')].map(e=>e.value);
+
+    if(!nome || !supremo || !senador || deps.length===0 || deps.length>2){
+        alert("Preencha tudo corretamente.");
+        return false;
+    }
+
+    document.getElementById("fNome").value = nome;
+    document.getElementById("fSupremo").value = supremo;
+    document.getElementById("fSenador").value = senador;
+    document.getElementById("fDeputados").value = deps.join(", ");
+
+    return true;
+}
+</script>
+
+</body>
+</html>
